@@ -10,5 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Installer les dépendances
+        run: npm install
+
       - name: test addition
         run: npm test
