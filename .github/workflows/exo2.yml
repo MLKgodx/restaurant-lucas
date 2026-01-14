@@ -4,29 +4,11 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
     
     steps:
-      # Étape 1 : Récupérer le code
-      - name: Récupérer le code
-        uses: actions/checkout@v3
-      
-      # Étape 2 : Installer Node.js
-      - name: Installer Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      # Étape 3 : Installer les dépendances
-      - name: Installer les dépendances
-        run: npm install
-      
-      # Étape 4 : Lancer les tests
-      - name: Lancer les tests
+      - name: test addition
         run: npm test
