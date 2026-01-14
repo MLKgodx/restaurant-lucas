@@ -1,0 +1,13 @@
+name: exo1
+on:
+  push:
+    branches:
+      - main
+  
+jobs:
+  ouverture:
+    runs-on: ubuntu-latest  
+
+    steps:
+      - name: Run tests
+        run: echo "Le restaurant est ouvert!"
