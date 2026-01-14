@@ -1,6 +1,5 @@
-function calculerAddition(prixPlat, prixBoisson) 
-{
-  return prixPlat + prixBoisson;
+function calculerAddition(prixPlat, prixBoisson) {
+  return prixPlat + prixBoisson; // ✅ CORRECT
 }
 
 module.exports = calculerAddition;
