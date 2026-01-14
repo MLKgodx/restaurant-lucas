@@ -6,20 +6,29 @@ on:
       - main
 
 jobs:
-  test:
+   example_matrix:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [18, 20, 22]
     
     steps:
       - name: Vérifier le code
         uses: actions/checkout@v3
 
-      - name: Installer Node.js
+      - name: Installer Node.js ${{ matrix.version }}
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: ${{ matrix.version }}
 
       - name: Installer les dépendances
         run: npm install
+
+      - name: linter
+        run : npm install --save-dev eslint @eslint/js globals
+
+      - name: test lint
+        run: npm run lint
 
       - name: test addition
         run: npm test
