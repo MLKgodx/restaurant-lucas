@@ -1,6 +1,12 @@
-function calculerAddition(prixPlat, prixBoisson) 
-{
+function calculerAddition(prixPlat, prixBoisson) {
   return prixPlat + prixBoisson;
 }
 
-module.exports = calculerAddition;
+function appliquerReduction(total, pourcentage) {
+  return total - (total * pourcentage / 100);
+}
+
+module.exports = {
+  calculerAddition,
+  appliquerReduction
+};
