@@ -1,0 +1,33 @@
+name: Tests 7
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Vérifier le code
+        uses: actions/checkout@v3
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: linter
+        run : npm install --save-dev eslint @eslint/js globals
+
+      - name: test lint
+        run: npm run lint
+        
+      - name: test addition
+        run: npm test
+
+            
