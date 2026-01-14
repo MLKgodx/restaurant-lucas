@@ -24,6 +24,9 @@ jobs:
       - name: linter
         run : npm install --save-dev eslint @eslint/js globals
 
+      - name: test lint
+        run: npm run lint
+        
       - name: test addition
         run: npm test
 
