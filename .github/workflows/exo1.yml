@@ -1,6 +1,5 @@
 name: Ouverture du Restaurant
 
-# Le workflow se déclenche à chaque push sur la branche main
 on:
   push:
     branches:
@@ -8,10 +7,10 @@ on:
 
 jobs:
   ouverture:
-    # Définir l'environnement d'exécution
     runs-on: ubuntu-latest
     
     steps:
-      # Étape simple qui annonce l'ouverture
       - name: Annoncer l'ouverture
-        run: echo "🍽️ Le restaurant est ouvert !"
+        run: echo "Le restaurant est ouvert !"
+
+
