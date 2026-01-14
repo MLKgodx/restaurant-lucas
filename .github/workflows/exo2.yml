@@ -6,20 +6,21 @@ on:
       - main
 
 jobs:
-   example_matrix:
+   tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [18, 20, 22]
-    
+        node-version: [18, 20, 22]
+
+    name: Node.js ${{ matrix.node-version }} Tests
     steps:
       - name: Vérifier le code
         uses: actions/checkout@v3
 
-      - name: Installer Node.js ${{ matrix.version }}
+      - name: Installer Node.js 
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.version }}
+          node-version: ${{ matrix.node-version }}
 
       - name: Installer les dépendances
         run: npm install
